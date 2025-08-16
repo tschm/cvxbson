@@ -45,6 +45,8 @@ jobs:
         with:
           version: 3.x
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          source-folder: 'src/cvx'
+          tests-folder: 'tests'
 
       - name: "Make the docs"
         run: |
