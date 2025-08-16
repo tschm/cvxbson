@@ -43,8 +43,8 @@ Python versions and different platforms. If these tests start failing,
 please
 fix your code and send another commit, which will re-trigger the tests.
 
-If you'd like to add a new feature, please do propose your
-change on a Github issue, to make sure
+If you'd like to add a new feature, please propose your
+change on a GitHub issue to ensure
 that your priorities align with ours.
 
 If you'd like to contribute code but don't know where to start,
