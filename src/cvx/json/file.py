@@ -11,30 +11,27 @@
 #    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
-"""
-Tools to support working with json files
-"""
+"""Tools to support working with json files."""
 
 import json
 from collections.abc import Iterable
 from os import PathLike
-from typing import Any, Dict, Union
+
+# see https://github.com/microsoft/pylance-release/issues/2019
+from typing import Any
 
 import numpy as np
 import numpy.typing as npt
 
-# see https://github.com/microsoft/pylance-release/issues/2019
-from typing_extensions import TypeAlias
-
 from .numpyencoder import NumpyEncoder
 
-FILE = Union[str, bytes, PathLike]
-MATRIX: TypeAlias = npt.NDArray[Any]
-DATA = Dict[str, Any]
+FILE = str | bytes | PathLike
+type MATRIX = npt.NDArray[Any]
+DATA = dict[str, Any]
 
 
 def read_json(json_file: FILE) -> DATA:
-    """Read a json file and return a genaerator of key-value pairs"""
+    """Read a json file and return a genaerator of key-value pairs."""
     with open(json_file) as f:
         json_data = json.load(f)
         d = {}
@@ -48,6 +45,6 @@ def read_json(json_file: FILE) -> DATA:
 
 
 def write_json(json_file: FILE, data: DATA) -> None:
-    """Write a json file with the data"""
+    """Write a json file with the data."""
     with open(json_file, "w") as f:
         json.dump(data, f, cls=NumpyEncoder)
