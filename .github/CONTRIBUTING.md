@@ -19,7 +19,7 @@ and all tests pass.
 ## Building from source
 
 You'll need to build the project locally in order to start editing code.
-To install from source, clone the Github
+To install from source, clone the GitHub
 repository, navigate to its root, and run the following command:
 
 ```bash
